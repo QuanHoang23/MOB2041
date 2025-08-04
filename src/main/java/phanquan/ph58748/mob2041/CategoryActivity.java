@@ -62,7 +62,7 @@ public class CategoryActivity extends AppCompatActivity {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerViewCategory.setLayoutManager(linearLayoutManager);
-        LoaiSachAdapter loaiSachAdapter = new LoaiSachAdapter(this,list);
+        LoaiSachAdapter loaiSachAdapter = new LoaiSachAdapter(this,list,loaiSachDAO);
         recyclerViewCategory.setAdapter(loaiSachAdapter);
     }
 

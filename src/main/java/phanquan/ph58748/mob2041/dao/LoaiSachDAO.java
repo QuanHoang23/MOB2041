@@ -49,4 +49,38 @@ public class LoaiSachDAO {
 
     }
 
+    public boolean suaLoaiSach(LoaiSach loaiSach){
+        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("tenloai",loaiSach.getTenloai());
+
+        int check = sqLiteDatabase.update("LOAISACH",contentValues,"maloai = ?",new String[]{String.valueOf(loaiSach.getMaloai())});
+
+        return check != 0;
+    }
+
+    /*
+    * -1 không xoá được do lỗi hệ thống
+    * 0 không xoá được do khoá ngoại
+    * 1 xoá thành công
+    * */
+
+    public  int xoaLoaiSach(int maloai){
+        SQLiteDatabase sqLiteDatabase = dbHelper.getWritableDatabase();
+
+        // Kiểm tra sự tồn tại của sách trong bảng sách
+        Cursor cursor = sqLiteDatabase.rawQuery("SELECT * FROM SACH WHERE maloai = ?",new String[]{String.valueOf(maloai)});
+        if(cursor.getCount() > 0){
+            return 0; // không đc xoá ràng buộc khoá ngoại
+        } else {
+            int check = sqLiteDatabase.delete("LOAISACH","maloai = ?" ,new String[]{String.valueOf(maloai)});
+            if(check == 0){
+                return -1 ;
+            } else {
+                return 1;
+            }
+        }
+    }
+
 }
