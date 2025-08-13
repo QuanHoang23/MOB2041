@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="4dp"
+    app:cardBackgroundColor="@color/card_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical">
+
+        <!-- Book Icon -->
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@mipmap/book"
+            android:background="@drawable/circle_background"
+            android:padding="12dp"
+            android:layout_marginEnd="16dp"/>
+
+        <!-- Book Information -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTenSach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tên sách"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/txtTacGia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tác giả"
+                android:textSize="14sp"
+                android:textColor="@color/text_secondary"
+                android:layout_marginBottom="4dp"/>
+
+            <TextView
+                android:id="@+id/txtTenLoai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Thể loại"
+                android:textSize="14sp"
+                android:textColor="@color/info"
+                android:layout_marginBottom="4dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/txtMaSach"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID: 1"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_hint"
+                    android:background="@drawable/badge_background"
+                    android:padding="4dp"
+                    android:layout_marginEnd="8dp"/>
+
+                <TextView
+                    android:id="@+id/txtGia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10,000 VNĐ"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/success"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
+
+            <ImageView
+                android:id="@+id/ivEdit"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_edit"
+                android:background="@drawable/icon_button_background"
+                android:padding="8dp"
+                android:layout_marginBottom="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"/>
+
+            <ImageView
+                android:id="@+id/ivDel"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_delete"
+                android:background="@drawable/icon_button_background_delete"
+                android:padding="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

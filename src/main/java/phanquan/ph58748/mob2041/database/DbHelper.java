@@ -21,12 +21,11 @@ public class DbHelper extends SQLiteOpenHelper {
 
 
         // bảng sách
-        String tSach = "CREATE TABLE SACH(masach integer primary key autoincrement, tensach text, tacgia text, giaban integer, maloai integer references LOAISACH(maloai))";
+        String tSach = "CREATE TABLE SACH(masach integer primary key autoincrement, tensach text, tacgia text, giaban integer, maloai integer references LOAISACH(maloai), soluong integer)";
         db.execSQL(tSach);
 
         // data mẫu sách
-
-        db.execSQL("INSERT INTO SACH VALUES(1,'kể cho em nghe','Phan Hoàng Quân',15000,1),(2,'Trạng Quỳnh','Kim Đồng',10000,1)");
+        db.execSQL("INSERT INTO SACH VALUES(1,'kể cho em nghe','Phan Hoàng Quân',15000,1,5),(2,'Trạng Quỳnh','Kim Đồng',10000,1,3)");
 
 
 

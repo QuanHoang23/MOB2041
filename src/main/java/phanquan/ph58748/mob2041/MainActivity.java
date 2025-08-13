@@ -31,13 +31,34 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("dataUser",MODE_PRIVATE);
         int role = sharedPreferences.getInt("role",-1);
+
+        /*
+        1 - người dùng
+        2 thủ thư
+        3 admin
+         */
         switch (role){
-            case 1:
-                linearLoaiSach.setVisibility(View.);
+            case 1: // người dùng
+                linearLoaiSach.setVisibility(View.GONE);
+                linearSach.setVisibility(View.GONE);
+                linearThongKe.setVisibility(View.GONE);
+                linearPM.setVisibility(View.GONE);
                 break;
-            case 2:
+            case 2: // thủ thư
+                linearLoaiSach.setVisibility(View.GONE);
+                linearSach.setVisibility(View.GONE);
+                linearThongKe.setVisibility(View.GONE);
+                linearLSPM.setVisibility(View.GONE);
                 break;
-            case 3:
+            case 3: // admin
+                linearLSPM.setVisibility(View.GONE);
+                break;
+            default:
+                linearLoaiSach.setVisibility(View.GONE);
+                linearSach.setVisibility(View.GONE);
+                linearThongKe.setVisibility(View.GONE);
+                linearLSPM.setVisibility(View.GONE);
+                linearPM.setVisibility(View.GONE);
                 break;
         }
     }
@@ -54,6 +75,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, BookActivity.class));
+            }
+        });
+
+        linearPM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, PhieuMuonActivity.class));
+            }
+        });
+
+        linearLSPM.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, UserBorrowActivity.class));
             }
         });
     }

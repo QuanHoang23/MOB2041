@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="16dp"
+    android:id="@+id/cardViewDialog"
+    android:background="@color/card_background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header -->
+        <TextView
+            android:id="@+id/ttTieuDe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thêm Sách Mới"
+            android:textStyle="bold"
+            android:textColor="@color/text_primary"
+            android:textSize="24sp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Tên sách -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tên sách"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/edtTenSach"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập tên sách"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edittext_modern"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_hint"
+            android:inputType="text"
+            android:padding="16dp"/>
+
+        <!-- Tác giả -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tác giả"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/edtTacGia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập tên tác giả"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edittext_modern"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_hint"
+            android:inputType="textPersonName"
+            android:padding="16dp"/>
+
+        <!-- Giá bán -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giá bán (VNĐ)"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/edtGiaBan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập giá bán"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edittext_modern"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:textColorHint="@color/text_hint"
+            android:inputType="number"
+            android:padding="16dp"/>
+
+        <!-- Loại sách -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Loại sách"
+            android:textSize="16sp"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerLoaiSach"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/edittext_modern"
+            android:padding="16dp"/>
+
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+            
+            <Button
+                android:id="@+id/btnHuy"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="HỦY"
+                android:textColor="@color/text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:background="@drawable/button_secondary"
+                android:layout_marginEnd="8dp"
+                android:textAllCaps="false"
+                app:backgroundTint="@null"/>
+            
+            <Button
+                android:id="@+id/btnLuu"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="LƯU"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:background="@drawable/button_primary"
+                android:layout_marginStart="8dp"
+                android:textAllCaps="false"
+                app:backgroundTint="@null"/>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
